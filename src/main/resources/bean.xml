@@ -1,0 +1,30 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans.xsd
+           http://www.springframework.org/schema/util
+   		   http://www.springframework.org/schema/util/spring-util.xsd">
+
+    <bean id="dateFormat" class="java.text.SimpleDateFormat">
+        <constructor-arg value="dd/MM/yyyy"/>
+    </bean>
+
+    <util:list id="personList" value-type="vn.topica.itlab4.bean.Person" scope="singleton">
+
+    </util:list>
+
+    <bean id="person" class="vn.topica.itlab4.bean.Person" scope="prototype">
+        <property name="id" value="-1"/>
+        <property name="name" value=""/>
+        <property name="birthOfDate">
+            <bean factory-bean="dateFormat" factory-method="parse">
+                <constructor-arg value="01/01/2000"/>
+            </bean>
+        </property>
+        <property name="gender" value="1"/>
+    </bean>
+
+</beans>

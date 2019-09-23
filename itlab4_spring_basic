@@ -1,0 +1,5 @@
+Có một file CSV và Database Table có tương ứng các cột sau: ID, Name, BirthOfDate, Gender.
+
+Yêu cầu:
+- Viết công cụ có thể đọc file định dạng CSV và insert vào Database Table
+- Sử dụng Spring Framework, định nghĩa Spring Bean bằng XML
